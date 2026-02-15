@@ -4,73 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JESMI - One Body | Live Experience</title>
-    <!-- Tally & FontAwesome -->
+    
+    <!-- Tally Widget Script (إصلاح رابط المكتبة) -->
     <script async src="https://tally.so"></script>
+    
+    <!-- FontAwesome Icons (إصلاح رابط الأيقونات) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; color: #333; background-color: #f8f9fa; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; background-color: #f8f9fa; line-height: 1.6; }
         html { scroll-behavior: smooth; }
         
-        /* Navigation */
         nav { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); padding: 1rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         nav ul { list-style: none; display: flex; gap: 2rem; justify-content: center; }
         nav a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9rem; }
 
-        /* Hero Section */
         .hero { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); color: white; padding: 6rem 2rem; text-align: center; min-height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        
+        /* إصلاح حاوية الشعار */
         .hero-logo { width: 160px; height: 160px; background: white; border-radius: 30px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 10px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
         .hero-logo img { width: 100%; height: 100%; object-fit: contain; }
         
         .hero h1 { font-size: 4rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
         .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin-bottom: 2.5rem; }
 
-        /* الأزرار - التعديل الجديد للبروز */
         .button-group { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; align-items: center; }
         
-        /* الزر الرئيسي: تجربة التطبيق */
         .btn-primary { 
-            display: inline-block; 
-            background-color: #fff; 
-            color: #c1121f; 
-            padding: 1.2rem 4rem; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-size: 1.4rem; 
-            font-weight: 800; 
-            transition: 0.3s; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            border: 2px solid white;
+            display: inline-block; background-color: #fff; color: #c1121f; padding: 1.2rem 3rem; 
+            border-radius: 50px; text-decoration: none; font-size: 1.3rem; font-weight: 800; 
+            transition: 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 2px solid white; 
         }
         .btn-primary:hover { transform: translateY(-5px); scale: 1.05; background: #f0f0f0; }
 
-        /* الزر الثانوي: الاستبيان */
         .btn-secondary { 
-            display: inline-block; 
-            background: rgba(255, 255, 255, 0.15); 
-            color: white; 
-            padding: 1rem 2.5rem; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-size: 1rem; 
-            font-weight: 600; 
-            border: 1px solid rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: 0.3s;
-            backdrop-filter: blur(5px);
+            display: inline-block; background: rgba(255, 255, 255, 0.15); color: white; padding: 1rem 2.5rem; 
+            border-radius: 50px; text-decoration: none; font-size: 1rem; font-weight: 600; 
+            border: 1px solid rgba(255,255,255,0.4); cursor: pointer; transition: 0.3s; backdrop-filter: blur(5px);
         }
         .btn-secondary:hover { background: rgba(255, 255, 255, 0.3); }
 
-        /* Sections */
         .section { padding: 6rem 2rem; max-width: 1000px; margin: 0 auto; text-align: center; }
         #platform-concept { background: linear-gradient(145deg, #c1121f, #e63946); color: white; border-radius: 40px; padding: 5rem 3rem; margin: 2rem 0; }
 
         .links-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
         .link-item { display: flex; align-items: center; gap: 0.8rem; background: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; color: #333; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; }
-        .link-item:hover { border-color: #c1121f; transform: translateY(-3px); }
 
         footer { background-color: #1a1a1a; color: #666; padding: 2rem; text-align: center; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } .button-group { flex-direction: column; width: 100%; } .btn-primary { width: 90%; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } .button-group { flex-direction: column; width: 100%; } }
     </style>
 </head>
 <body>
@@ -86,20 +68,19 @@
 
     <section id="hero" class="hero">
         <div class="hero-logo">
-            <img src="https://i.postimg.cc" alt="JESMI Logo">
+            <!-- رابط شعار جديد ومستقر -->
+            <img src="https://i.ibb.co" onerror="this.src='https://via.placeholder.com'" alt="JESMI Logo">
         </div>
         <h1>JESMI</h1>
-        <p>One Body - The Evolution of Digital Harmony. Start your journey now.</p>
+        <p>One Body - The Evolution of Digital Harmony.</p>
         
-        <!-- مجموعة الأزرار الجديدة -->
         <div class="button-group">
-            <!-- الزر الأبرز: رابط التجربة -->
             <a href="https://studio--studio-3908265938-96e20.us-central1.hosted.app" target="_blank" class="btn-primary">
                 <i class="fas fa-play-circle"></i> Try Now
             </a>
 
-            <!-- الزر الثانوي: الاستبيان والمكافأة -->
-            <button class="btn-secondary" data-tally-open="MezBBM" data-tally-layout="modal">
+            <!-- تفعيل زر Tally باستخدام المعرف الخاص بك MezBBM -->
+            <button class="btn-secondary" data-tally-open="MezBBM" data-tally-layout="modal" data-tally-emoji-text="👋">
                 <i class="fas fa-gift"></i> Claim 500 Points
             </button>
         </div>
@@ -107,22 +88,22 @@
 
     <section id="about" class="section">
         <h2>About Us</h2>
-        <p style="font-size: 1.2rem; color: #666;">JESMI is more than an app; it's a living technology that moves with you. Experience seamless interaction today.</p>
+        <p>JESMI is a living technology that moves with you. Experience seamless interaction today.</p>
     </section>
 
     <section class="section">
         <div id="platform-concept">
             <h2>The Concept</h2>
-            <p style="font-size: 1.3rem;">"Dissolve the boundaries between your physical body and digital life. A unified experience for the curious human."</p>
+            <p>"Dissolve the boundaries between your physical body and digital life."</p>
         </div>
     </section>
 
     <section id="contact" class="section">
         <h2>Connect With Us</h2>
         <div class="links-container">
-            <a href="https://wa.me..." target="_blank" class="link-item"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp EG</a>
-            <a href="https://wa.me..." target="_blank" class="link-item"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp SD</a>
-            <a href="https://www.linkedin.com" target="_blank" class="link-item"><i class="fab fa-linkedin" style="color:#0077B5"></i> LinkedIn</a>
+            <a href="https://wa.me" class="link-item"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp EG</a>
+            <a href="https://wa.me" class="link-item"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp SD</a>
+            <a href="https://linkedin.com" class="link-item"><i class="fab fa-linkedin" style="color:#0077B5"></i> LinkedIn</a>
         </div>
     </section>
 
