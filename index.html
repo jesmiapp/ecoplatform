@@ -11,11 +11,10 @@
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f8f9fa; color: #333; line-height: 1.6; }
         html { scroll-behavior: smooth; }
 
-        /* Navigation */
+        /* Navigation & Hero */
         nav { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav a { color: white; text-decoration: none; font-weight: 600; margin: 0 15px; font-size: 0.9rem; }
 
-        /* Hero Section */
         .hero { 
             background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); 
             color: white; padding: 5rem 1rem; text-align: center; 
@@ -29,74 +28,91 @@
         }
         .hero-logo img { width: 90%; height: 90%; object-fit: contain; }
         
-        h1 { font-size: 4rem; margin-bottom: 10px; letter-spacing: -2px; font-weight: 800; }
+        h1 { font-size: 4rem; letter-spacing: -2px; font-weight: 800; margin-bottom: 10px; }
         p.tagline { font-size: 1.3rem; opacity: 0.9; margin-bottom: 3rem; max-width: 600px; }
 
         /* Action Buttons */
         .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
         .btn-main { background: white; color: #c1121f; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.3rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: inline-flex; align-items: center; gap: 10px; }
-        .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1px solid white; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1.5px solid white; display: inline-flex; align-items: center; gap: 10px; }
 
-        /* Professional Chatbot UI */
+        /* Chatbot Hybrid UI */
         #jesmi-chat { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
         #chat-trigger { width: 65px; height: 65px; background: #c1121f; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 25px rgba(0,0,0,0.2); border: 2px solid white; font-size: 24px; }
-        #chat-window { display: none; position: absolute; bottom: 85px; right: 0; width: 350px; background: white; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; border: 1px solid #eee; }
+        #chat-window { display: none; position: absolute; bottom: 85px; right: 0; width: 360px; background: white; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; border: 1px solid #eee; }
         #chat-header { background: #c1121f; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
-        #chat-body { height: 320px; padding: 15px; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+        #chat-body { height: 320px; padding: 15px; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 10px; font-size: 14px; scroll-behavior: smooth; }
         
         .msg { padding: 10px 14px; border-radius: 15px; max-width: 85%; line-height: 1.4; }
         .bot { background: #eee; align-self: flex-start; color: #222; }
         .user { background: #c1121f; color: white; align-self: flex-end; }
         
+        /* Chat Options/Hints */
+        .chat-hints { padding: 10px; background: #fff; border-top: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 5px; }
+        .hint-btn { background: #fff; border: 1px solid #c1121f; color: #c1121f; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: bold; transition: 0.2s; }
+        .hint-btn:hover { background: #c1121f; color: white; }
+
         #chat-input-area { padding: 10px; background: white; border-top: 1px solid #eee; display: flex; gap: 5px; }
-        #chat-input-area input { flex: 1; border: 1px solid #ddd; padding: 10px; border-radius: 20px; outline: none; font-size: 13px; }
+        #chat-input-area input { flex: 1; border: 1px solid #ddd; padding: 10px 15px; border-radius: 20px; outline: none; font-size: 13px; }
         #chat-input-area button { background: #c1121f; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; }
 
-        /* Footer Section */
+        /* Updated Footer Section */
         footer { background-color: #0b0b0b; color: #777; padding: 4rem 2rem; text-align: center; border-top: 1px solid #222; }
         .founder-name { color: #fff; font-size: 1.6rem; font-weight: 800; display: block; margin-bottom: 5px; }
-        .founder-title { color: #e63946; font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; display: block; }
+        .founder-title { color: #e63946; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .footer-bio { font-size: 0.8rem; opacity: 0.6; max-width: 600px; margin: 0 auto 25px; }
+        
+        .support-header { color: #eee; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px; display: block; }
         .contact-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px; }
-        .contact-pill { background: #1a1a1a; padding: 8px 18px; border-radius: 50px; color: #ddd; text-decoration: none; font-size: 0.85rem; border: 1px solid #333; transition: 0.3s; }
+        .contact-pill { background: #1a1a1a; padding: 10px 20px; border-radius: 50px; color: #ddd; text-decoration: none; font-size: 0.85rem; border: 1px solid #333; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .contact-pill:hover { border-color: #e63946; color: #fff; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="mailto:graphic.abdalla@gmail.com">Founder Support</a>
+        <a href="#hero">Home</a>
+        <a href="mailto:graphic.abdalla@gmail.com">Contact Support</a>
     </nav>
 
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="hero-logo">
-            <img src="https://i.postimg.cc/RCb0831Y/JESMI.gif" alt="JESMI Logo">
+            <!-- رابط الشعار المباشر المستقر -->
+            <img src="https://i.postimg.cc" alt="JESMI Logo">
         </div>
         <h1>JESMI</h1>
-        <p class="tagline">The "One Body" Philosophy. Experience Digital Harmony synchronized with your biology.</p>
+        <p class="tagline">The "One Body" Philosophy. Synchronizing biology, lifestyle, and digital harmony into one flow.</p>
         
         <div class="btn-group">
             <a href="https://studio--studio-3908265938-96e20.us-central1.hosted.app" target="_blank" class="btn-main">
-                <i class="fas fa-rocket"></i> Try Now
+                <i class="fas fa-rocket"></i> Try App
             </a>
             <!-- رابط الاستبيان المباشر -->
-            <a href="https://tally.so/r/MezBBM" target="_blank" class="btn-sub">
+            <a href="https://tally.so" target="_blank" class="btn-sub">
                 <i class="fas fa-gift"></i> Claim 500 Points
             </a>
         </div>
     </section>
 
-    <!-- Professional JESMI Chatbot -->
+    <!-- Professional Hybrid Chatbot -->
     <div id="jesmi-chat">
         <div id="chat-trigger" onclick="toggleChat()"><i class="fas fa-fingerprint"></i></div>
         <div id="chat-window">
             <div id="chat-header"><span>JESMI Intel</span><i class="fas fa-times" onclick="toggleChat()" style="cursor:pointer"></i></div>
-            <div id="chat-body" id="chatMessages">
-                <div class="msg bot">Connection Established. Your body's voice is now heard. How can I assist you with your bio-harmony?</div>
+            <div id="chat-body">
+                <div class="msg bot">Connection Established. Your body's voice is now heard. Ask me anything or select a topic below.</div>
             </div>
+            
+            <div class="chat-hints">
+                <button class="hint-btn" onclick="sendQuickMsg('Mood Recovery')">Mood Logic</button>
+                <button class="hint-btn" onclick="sendQuickMsg('Weight Gaps')">Weight Gaps</button>
+                <button class="hint-btn" onclick="sendMsg('Expansion')">Expansion</button>
+                <button class="hint-btn" onclick="sendQuickMsg('The Founder')">Founder</button>
+            </div>
+
             <div id="chat-input-area">
-                <input type="text" id="userInput" placeholder="Ask about Mood, Vitals, Expansion..." onkeypress="if(event.key === 'Enter') sendMessage()">
-                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+                <input type="text" id="userInput" placeholder="Ask about Bio-Sync, Roadmap..." onkeypress="if(event.key === 'Enter') handleInput()">
+                <button onclick="handleInput()"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
@@ -105,50 +121,54 @@
         <span class="founder-name">Abdalla A. Mustafa</span>
         <span class="founder-title">Founder | AI Response Designer | Multimedia Specialist</span>
         
-        <div class="contact-grid">
-            <a href="mailto:graphic.abdalla@gmail.com" class="contact-pill"><i class="fas fa-envelope"></i> Email</a>
-            <a href="https://wa.me" target="_blank" class="contact-pill"><i class="fab fa-whatsapp"></i> Egypt</a>
-            <a href="https://wa.me" target="_blank" class="contact-pill"><i class="fab fa-whatsapp"></i> Sudan</a>
-            <a href="https://linkedin.com" target="_blank" class="contact-pill"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <div class="footer-bio">
+            Alumnus of Sudan University of Science and Technology (SUST). Expert in AI Design at Outlier. Professional experience spanning UAE, KSA, Sudan, and Egypt.
         </div>
 
-        <p style="font-size: 0.75rem; opacity: 0.5; max-width: 600px; margin: 0 auto;">
-            Multimedia Alumnus (SUST) | Expert in AI Response Design at Outlier. Professional journey across UAE, KSA, Sudan, and Egypt.
-        </p>
-        <p style="font-size: 0.75rem; margin-top: 20px;">&copy; 2024 JESMI. One Body. One Goal.</p>
+        <span class="support-header">Direct Support & Guidance:</span>
+        <div class="contact-grid">
+            <a href="https://wa.me" target="_blank" class="contact-pill"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp Support (EG)</a>
+            <a href="https://wa.me" target="_blank" class="contact-pill"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp Support (SD)</a>
+            <a href="mailto:graphic.abdalla@gmail.com" class="contact-pill"><i class="fas fa-envelope"></i> Email Contact</a>
+        </div>
+        <p style="font-size: 0.7rem; margin-top: 20px; opacity: 0.4;">&copy; 2024 JESMI. One Body. One Goal.</p>
     </footer>
 
     <script>
         function toggleChat() {
-            const win = document.getElementById('chat-window');
-            win.style.display = (win.style.display === 'flex') ? 'none' : 'flex';
+            const box = document.getElementById('chat-window');
+            box.style.display = (box.style.display === 'flex') ? 'none' : 'flex';
         }
 
-        const BRAIN = {
-            "founder": "Abdalla A. Mustafa is a Multimedia professional and AI Response Designer at Outlier. He combined his global experience in UAE, KSA, and Egypt to create JESMI.",
-            "mood": "JESMI understands 'Mood Requirements'. If you eat for comfort, it calculates a 'Recovery Plan' to balance calories through hydration and activity adjustments.",
-            "vitals": "We track Real vs. Expected Weight, explaining the biological 'Why' (water, hormones, activity) and providing a corrective roadmap.",
-            "barcode": "JESMI is expanding to Gyms and Events via Barcodes, allowing seamless bio-data synchronization without manual entry.",
-            "logic": "Our 'One Body' logic balances Calories, Water, Activity, and Mood to maintain perfect hormonal harmony."
+        const KNOWLEDGE = {
+            "founder": "Abdalla A. Mustafa is a Multimedia professional and AI Response Designer at Outlier. He founded JESMI to integrate AI with human biology across global markets.",
+            "mood": "JESMI understands 'Mood Requirements'. If you eat for comfort, it calculates a 'Recovery Plan' through hydration and activity adjustments to restore harmony.",
+            "weight": "We track Real vs. Expected Weight, explaining the biological 'Why' (water, hormones, activity) and providing a corrective strategy.",
+            "expansion": "Expansion includes JESMI Barcodes for facilities. Scan at Gyms and Restaurants to auto-sync metabolic data and maintain harmony anywhere.",
+            "default": "I am programmed with Abdalla's vision. Ask about 'Mood', 'Weight Gaps', or 'Expansion'!"
         };
 
-        function sendMessage() {
+        function sendQuickMsg(text) {
+            handleInput(text);
+        }
+
+        function handleInput(customText = null) {
             const input = document.getElementById('userInput');
-            const val = input.value.trim().toLowerCase();
-            if(!val) return;
+            const text = customText || input.value.trim();
+            if(!text) return;
 
             const body = document.getElementById('chat-body');
-            body.innerHTML += `<div class="msg user">${input.value}</div>`;
-            input.value = "";
+            body.innerHTML += `<div class="msg user">${text}</div>`;
+            if(!customText) input.value = "";
             body.scrollTop = body.scrollHeight;
 
             setTimeout(() => {
-                let reply = "I am programmed with Abdalla's vision. Ask about 'Mood', 'Weight Gaps', or 'Expansion'.";
-                if(val.includes("founder") || val.includes("abdalla")) reply = BRAIN.founder;
-                else if(val.includes("mood") || val.includes("calories")) reply = BRAIN.mood;
-                else if(val.includes("weight") || val.includes("real")) reply = BRAIN.vitals;
-                else if(val.includes("barcode") || val.includes("expansion")) reply = BRAIN.barcode;
-                else if(val.includes("logic") || val.includes("how")) reply = BRAIN.logic;
+                let reply = KNOWLEDGE.default;
+                const low = text.toLowerCase();
+                if(low.includes("founder") || low.includes("abdalla")) reply = KNOWLEDGE.founder;
+                else if(low.includes("mood") || low.includes("recovery")) reply = KNOWLEDGE.mood;
+                else if(low.includes("weight") || low.includes("gap")) reply = KNOWLEDGE.weight;
+                else if(low.includes("expansion") || low.includes("barcode")) reply = KNOWLEDGE.expansion;
 
                 body.innerHTML += `<div class="msg bot">${reply}</div>`;
                 body.scrollTop = body.scrollHeight;
