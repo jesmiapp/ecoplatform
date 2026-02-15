@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JESMI - One Body | Live Experience</title>
     
-    <!-- Tally Widget Script (إصلاح رابط المكتبة) -->
+    <!-- Tally Widget Script - لفتح الاستبيان بنجاح -->
     <script async src="https://tally.so"></script>
     
-    <!-- FontAwesome Icons (إصلاح رابط الأيقونات) -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
     
     <style>
@@ -20,39 +20,43 @@
         nav ul { list-style: none; display: flex; gap: 2rem; justify-content: center; }
         nav a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9rem; }
 
-        .hero { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); color: white; padding: 6rem 2rem; text-align: center; min-height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .hero { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); color: white; padding: 6rem 2rem; text-align: center; min-height: 95vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
-        /* إصلاح حاوية الشعار */
-        .hero-logo { width: 160px; height: 160px; background: white; border-radius: 30px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 10px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
-        .hero-logo img { width: 100%; height: 100%; object-fit: contain; }
+        /* تحسين حاوية شعار JESMI */
+        .hero-logo { width: 180px; height: 180px; background: white; border-radius: 35px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 15px; box-shadow: 0 20px 45px rgba(0,0,0,0.3); }
+        .hero-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
         
-        .hero h1 { font-size: 4rem; margin-bottom: 0.5rem; letter-spacing: -1px; }
-        .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin-bottom: 2.5rem; }
+        .hero h1 { font-size: 4.5rem; margin-bottom: 0.5rem; letter-spacing: -1px; font-weight: 800; }
+        .hero p { font-size: 1.4rem; opacity: 0.95; max-width: 650px; margin-bottom: 3rem; }
 
         .button-group { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; align-items: center; }
         
+        /* زر التجربة (الأبرز) */
         .btn-primary { 
-            display: inline-block; background-color: #fff; color: #c1121f; padding: 1.2rem 3rem; 
-            border-radius: 50px; text-decoration: none; font-size: 1.3rem; font-weight: 800; 
-            transition: 0.3s; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 2px solid white; 
+            display: inline-flex; align-items: center; gap: 10px; background-color: #fff; color: #c1121f; 
+            padding: 1.3rem 4rem; border-radius: 60px; text-decoration: none; font-size: 1.5rem; 
+            font-weight: 800; transition: 0.4s; box-shadow: 0 12px 30px rgba(0,0,0,0.25); border: 3px solid white; 
         }
-        .btn-primary:hover { transform: translateY(-5px); scale: 1.05; background: #f0f0f0; }
+        .btn-primary:hover { transform: translateY(-7px) scale(1.03); background: #f8f8f8; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
 
+        /* زر الاستبيان (الثانوي) */
         .btn-secondary { 
-            display: inline-block; background: rgba(255, 255, 255, 0.15); color: white; padding: 1rem 2.5rem; 
-            border-radius: 50px; text-decoration: none; font-size: 1rem; font-weight: 600; 
-            border: 1px solid rgba(255,255,255,0.4); cursor: pointer; transition: 0.3s; backdrop-filter: blur(5px);
+            display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.2); 
+            color: white; padding: 1.1rem 2.8rem; border-radius: 60px; text-decoration: none; 
+            font-size: 1.1rem; font-weight: 600; border: 1.5px solid rgba(255,255,255,0.5); 
+            cursor: pointer; transition: 0.3s; backdrop-filter: blur(8px);
         }
-        .btn-secondary:hover { background: rgba(255, 255, 255, 0.3); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.35); border-color: white; }
 
-        .section { padding: 6rem 2rem; max-width: 1000px; margin: 0 auto; text-align: center; }
-        #platform-concept { background: linear-gradient(145deg, #c1121f, #e63946); color: white; border-radius: 40px; padding: 5rem 3rem; margin: 2rem 0; }
+        .section { padding: 8rem 2rem; max-width: 1000px; margin: 0 auto; text-align: center; }
+        #platform-concept { background: linear-gradient(145deg, #c1121f, #e63946); color: white; border-radius: 50px; padding: 6rem 3rem; margin: 3rem 0; box-shadow: 0 25px 50px rgba(193, 18, 31, 0.2); }
 
-        .links-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
-        .link-item { display: flex; align-items: center; gap: 0.8rem; background: white; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; color: #333; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; }
+        .links-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin-top: 3rem; }
+        .link-item { display: flex; align-items: center; gap: 10px; background: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; color: #333; font-weight: 700; box-shadow: 0 6px 15px rgba(0,0,0,0.06); transition: 0.3s; }
+        .link-item:hover { transform: translateY(-4px); border-color: #c1121f; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        footer { background-color: #1a1a1a; color: #666; padding: 2rem; text-align: center; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } .button-group { flex-direction: column; width: 100%; } }
+        footer { background-color: #111; color: #777; padding: 3rem; text-align: center; border-top: 1px solid #222; }
+        @media (max-width: 768px) { .hero h1 { font-size: 3rem; } .button-group { flex-direction: column; width: 100%; } .btn-primary { width: 90%; justify-content: center; } }
     </style>
 </head>
 <body>
@@ -67,48 +71,49 @@
     </nav>
 
     <section id="hero" class="hero">
+        <!-- شعار JESMI الأصلي -->
         <div class="hero-logo">
-            <!-- رابط شعار جديد ومستقر -->
-            <img src="https://i.ibb.co" onerror="this.src='https://via.placeholder.com'" alt="JESMI Logo">
+            <img src="https://i.postimg.cc/RCb0831Y/JESMI.gif" alt="JESMI Original Logo">
         </div>
         <h1>JESMI</h1>
-        <p>One Body - The Evolution of Digital Harmony.</p>
+        <p>One Body - The Evolution of Digital Harmony. Experience the future of interaction now.</p>
         
         <div class="button-group">
+            <!-- رابط تجربة التطبيق (Try Now) -->
             <a href="https://studio--studio-3908265938-96e20.us-central1.hosted.app" target="_blank" class="btn-primary">
-                <i class="fas fa-play-circle"></i> Try Now
+                <i class="fas fa-rocket"></i> Try Now
             </a>
 
-            <!-- تفعيل زر Tally باستخدام المعرف الخاص بك MezBBM -->
-            <button class="btn-secondary" data-tally-open="MezBBM" data-tally-layout="modal" data-tally-emoji-text="👋">
-                <i class="fas fa-gift"></i> Claim 500 Points
+            <!-- زر الاستبيان المربوط بـ MezBBM -->
+            <button class="btn-secondary" data-tally-open="MezBBM" data-tally-layout="modal">
+                <i class="fas fa-sparkles"></i> Claim 500 Points
             </button>
         </div>
     </section>
 
     <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>JESMI is a living technology that moves with you. Experience seamless interaction today.</p>
+        <h2>About JESMI</h2>
+        <p style="font-size: 1.3rem; color: #555; max-width: 800px; margin: 0 auto;">A seamless philosophy where technology moves like a single organism. Intuitive, unified, and personal.</p>
     </section>
 
     <section class="section">
         <div id="platform-concept">
             <h2>The Concept</h2>
-            <p>"Dissolve the boundaries between your physical body and digital life."</p>
+            <p style="font-size: 1.5rem; font-weight: 300; opacity: 0.9;">"Beyond screens lies a space where boundaries dissolve and data flows with your body."</p>
         </div>
     </section>
 
     <section id="contact" class="section">
         <h2>Connect With Us</h2>
         <div class="links-container">
-            <a href="https://wa.me" class="link-item"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp EG</a>
-            <a href="https://wa.me" class="link-item"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp SD</a>
-            <a href="https://linkedin.com" class="link-item"><i class="fab fa-linkedin" style="color:#0077B5"></i> LinkedIn</a>
+            <a href="https://wa.me..." target="_blank" class="link-item"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp EG</a>
+            <a href="https://wa.me..." target="_blank" class="link-item"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp SD</a>
+            <a href="https://linkedin.com..." target="_blank" class="link-item"><i class="fab fa-linkedin" style="color:#0077B5"></i> LinkedIn</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 JESMI. One Body. One Goal.</p>
+        <p>&copy; 2024 JESMI. Built for the curious ones.</p>
     </footer>
 
 </body>
