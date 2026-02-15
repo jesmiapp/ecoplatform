@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JESMI - One Body | Founder: Abdalla A. Mustafa</title>
+    <title>JESMI - One Body | Digital Harmony</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,16 +23,15 @@
 
         /* Action Buttons */
         .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; }
-        .btn-main { background: white; color: #c1121f; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.3rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-        .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; border: 1px solid white; }
+        .btn-main { background: white; color: #c1121f; padding: 1.2rem 3.5rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.3rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: 0.3s; }
+        .btn-main:hover { transform: translateY(-5px); background: #fdfdfd; }
+        .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1px solid white; transition: 0.3s; }
 
         /* Content Sections */
-        .section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; text-align: center; }
-        .section h2 { color: #c1121f; margin-bottom: 2rem; font-size: 2.5rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 5px solid #c1121f; }
+        .section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+        .section h2 { margin-bottom: 2rem; font-size: 2.5rem; color: #333; font-weight: 800; } 
         
-        #platform-concept { background: linear-gradient(145deg, #c1121f, #e63946); color: white; border-radius: 40px; padding: 5rem 3rem; margin: 3rem auto; max-width: 900px; }
+        #platform-concept { background: #fff; border: 1px solid #eee; border-radius: 40px; padding: 5rem 3rem; margin: 3rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 
         /* Hybrid Chatbot */
         #jesmi-chat { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
@@ -43,17 +42,14 @@
         .msg { padding: 10px 14px; border-radius: 15px; max-width: 85%; }
         .bot { background: #eee; align-self: flex-start; }
         .user { background: #c1121f; color: white; align-self: flex-end; }
-        .chat-hints { padding: 10px; background: #fff; border-top: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 5px; }
-        .hint-btn { background: #fff; border: 1px solid #c1121f; color: #c1121f; padding: 5px 10px; border-radius: 15px; cursor: pointer; font-size: 11px; font-weight: bold; }
         #chat-input-area { padding: 10px; background: white; border-top: 1px solid #eee; display: flex; gap: 5px; }
         #chat-input-area input { flex: 1; border: 1px solid #ddd; padding: 10px 15px; border-radius: 20px; outline: none; }
 
-        /* International Footer */
-        footer { background-color: #0b0b0b; color: #777; padding: 4rem 2rem; text-align: center; border-top: 1px solid #222; }
-        .founder-link { color: #fff; font-size: 1.6rem; font-weight: 800; text-decoration: none; transition: 0.3s; display: inline-block; margin-bottom: 10px; }
+        /* Minimal Secondary Footer */
+        footer { background-color: #0b0b0b; color: #444; padding: 3rem 2rem; text-align: center; border-top: 1px solid #222; }
+        .founder-link { color: #666; font-size: 0.85rem; text-decoration: none; transition: 0.3s; }
         .founder-link:hover { color: #e63946; }
-        .contact-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px 0; }
-        .contact-pill { background: #1a1a1a; padding: 10px 20px; border-radius: 50px; color: #ddd; text-decoration: none; font-size: 0.9rem; border: 1px solid #333; display: flex; align-items: center; gap: 8px; }
+        .footer-copyright { font-size: 0.7rem; margin-top: 15px; opacity: 0.4; letter-spacing: 2px; }
     </style>
 </head>
 <body>
@@ -61,89 +57,56 @@
     <nav>
         <ul>
             <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#about">Vision</a></li>
             <li><a href="#platform-concept">Concept</a></li>
-            <li><a href="#features">Features</a></li>
         </ul>
     </nav>
 
     <section id="hero" class="hero">
-        <div class="hero-logo"><img src="https://i.postimg.cc" alt="JESMI"></div>
+        <div class="hero-logo">
+            <!-- رابط شعار JESMI المباشر -->
+            <img src="https://i.postimg.cc/RCb0831Y/JESMI.gif" alt="JESMI">
+        </div>
         <h1>JESMI</h1>
-        <p style="font-size: 1.3rem; opacity: 0.9; margin-top: 10px;">The "One Body" Philosophy. Synchronizing biology, lifestyle, and harmony.</p>
+        <p style="font-size: 1.3rem; opacity: 0.9; margin-top: 10px;">One Body. Synchronizing biology and digital harmony.</p>
         <div class="btn-group">
             <a href="https://studio--studio-3908265938-96e20.us-central1.hosted.app" target="_blank" class="btn-main"><i class="fas fa-rocket"></i> Try Now</a>
-            <a href="https://tally.so" target="_blank" class="btn-sub"><i class="fas fa-gift"></i> Claim 500 Points</a>
+            <!-- رابط استبيان Tally المباشر -->
+            <a href="https://tally.so/r/MezBBM" target="_blank" class="btn-sub"><i class="fas fa-gift"></i> Claim 500 Points</a>
         </div>
     </section>
 
-    <!-- التعريف بالبرنامج - Vision -->
     <section id="about" class="section">
         <h2>Our Vision</h2>
-        <p style="font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;">JESMI is a philosophy. We believe technology should move like a single living organism—seamless, intuitive, and unified. We bridge the gap between your habits and your biological responses.</p>
+        <p style="font-size: 1.15rem; color: #777; max-width: 750px; margin: 0 auto;">Technology should move like a single living organism—seamless and unified. JESMI bridges the gap between daily habits and biological responses.</p>
     </section>
 
-    <!-- Concept Section -->
-    <section class="section">
-        <div id="platform-concept">
-            <h2>The Concept</h2>
-            <p style="font-size: 1.4rem;">"Beyond traditional interfaces lies a new dimension of interaction. A space where boundaries dissolve and your data flows with your body."</p>
-        </div>
+    <!-- تم تغيير اللون للأسود كما طلبت -->
+    <section id="platform-concept" class="section">
+        <h2>The Concept</h2>
+        <p style="font-size: 1.3rem; color: #555; font-weight: 300;">"Beyond traditional interfaces lies a new dimension of interaction. A space where boundaries dissolve and data flows with your body."</p>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="section" style="background: #f1f3f5; max-width: 100%;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <h2>Key Features</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Mood & Calorie Logic</h3>
-                    <p>Dynamic balancing of calories, water, and activity. If you over-consume for mood, JESMI calculates an instant recovery plan.</p>
-                </div>
-                <div class="card">
-                    <h3>Bio-Sync Weather</h3>
-                    <p>Synchronization with local weather and time of day to adjust your suggested daily biological targets.</p>
-                </div>
-                <div class="card">
-                    <h3>The Social Curtain</h3>
-                    <p>A privacy layer that hides social features and enlarges control icons for a high-focus biometric experience.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hybrid Chatbot -->
     <div id="jesmi-chat">
         <div id="chat-trigger" onclick="toggleChat()"><i class="fas fa-fingerprint"></i></div>
         <div id="chat-window">
             <div id="chat-header"><span>JESMI Intel</span><i class="fas fa-times" onclick="toggleChat()" style="cursor:pointer"></i></div>
             <div id="chat-body" id="chatMessages">
-                <div class="msg bot">Connection Established. I am the JESMI Assistant. How can I help you today?</div>
-            </div>
-            <div class="chat-hints">
-                <button class="hint-btn" onclick="sendQuickMsg('Mood Recovery')">Mood Logic</button>
-                <button class="hint-btn" onclick="sendQuickMsg('Weight Gaps')">Weight Gaps</button>
-                <button class="hint-btn" onclick="sendQuickMsg('Barcode Expansion')">Expansion</button>
+                <div class="msg bot">Connection Established. Ask me about the JESMI Bio-logic or Expansion plans.</div>
             </div>
             <div id="chat-input-area">
                 <input type="text" id="userInput" placeholder="Ask anything..." onkeypress="if(event.key === 'Enter') handleInput()">
-                <button onclick="handleInput()"><i class="fas fa-paper-plane"></i></button>
+                <button onclick="handleInput()" style="background:none; border:none; color:#c1121f; cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
 
-    <!-- International Footer -->
     <footer>
-        <a href="https://linkedin.com" target="_blank" class="founder-link">Abdalla A. Mustafa</a>
-        <p style="color:#e63946; font-weight:bold; margin-bottom:10px;">Founder | AI Response Designer | Multimedia Specialist</p>
-        <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 25px;">Expertise in AI & Multimedia | SUST Alumnus</p>
-        
-        <div class="contact-row">
-            <a href="https://wa.me" target="_blank" class="contact-pill"><i class="fab fa-whatsapp"></i> +20 115 4190610</a>
-            <a href="https://wa.me" target="_blank" class="contact-pill"><i class="fab fa-whatsapp"></i> +249 912 541954</a>
-            <a href="mailto:graphic.abdalla@gmail.com" class="contact-pill"><i class="fas fa-envelope"></i> Email Support</a>
-        </div>
-        <p style="font-size: 0.7rem; opacity: 0.4;">&copy; 2024 JESMI. One Body. One Goal.</p>
+        <!-- وصلة ثانوية غير جوهرية تحتوي على معلوماتك المبطنة كما طلبت -->
+        <a href="mailto:graphic.abdalla@://gmail.com Inquiry&body=Founder Contact: Egypt +201154190610 / Sudan +249912541954" class="founder-link">
+            Founder: Abdalla A. Mustafa
+        </a>
+        <div class="footer-copyright">&copy; 2026 JESMI. ONE BODY. ONE GOAL.</div>
     </footer>
 
     <script>
@@ -152,26 +115,25 @@
             box.style.display = (box.style.display === 'flex') ? 'none' : 'flex';
         }
         const DATA = {
-            "founder": "Abdalla A. Mustafa is a Multimedia professional and AI Response Designer at Outlier. He combined his experience in UAE, KSA, Sudan, and Egypt to build JESMI.",
-            "mood": "JESMI understands 'Mood Requirements'. If you eat for comfort, it calculates a 'Recovery Plan' through activity adjustments.",
-            "barcode": "JESMI Barcodes allow seamless metabolic data sync at partnered Gyms and Restaurants.",
+            "founder": "Founder Abdalla A. Mustafa is an AI Response Designer and Multimedia specialist. His global vision is the core of JESMI's logic.",
+            "mood": "JESMI is mood-flexible. If you consume extra calories for mood, it calculates an instant 'Recovery Plan' through hydration and activity.",
+            "expansion": "JESMI is expanding to Gyms and Events via Barcodes for seamless bio-data synchronization.",
             "default": "Ask me about 'Mood', 'Expansion', or 'The Founder'!"
         };
-        function sendQuickMsg(t) { handleInput(t); }
-        function handleInput(customText = null) {
+        function handleInput() {
             const input = document.getElementById('userInput');
-            const text = customText || input.value.trim();
+            const text = input.value.trim();
             if(!text) return;
             const body = document.getElementById('chat-body');
             body.innerHTML += `<div class="msg user">${text}</div>`;
-            if(!customText) input.value = "";
+            input.value = "";
             body.scrollTop = body.scrollHeight;
             setTimeout(() => {
                 let r = DATA.default;
                 const low = text.toLowerCase();
                 if(low.includes("founder") || low.includes("abdalla")) r = DATA.founder;
-                else if(low.includes("mood")) r = DATA.mood;
-                else if(low.includes("expansion") || low.includes("barcode")) r = DATA.barcode;
+                else if(low.includes("mood") || low.includes("calories")) r = DATA.mood;
+                else if(low.includes("expansion") || low.includes("barcode")) r = DATA.expansion;
                 body.innerHTML += `<div class="msg bot">${r}</div>`;
                 body.scrollTop = body.scrollHeight;
             }, 600);
