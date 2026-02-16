@@ -10,34 +10,27 @@
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f8f9fa; color: #333; line-height: 1.6; }
         html { scroll-behavior: smooth; }
 
-        /* Navigation */
         nav { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav ul { list-style: none; display: flex; gap: 1.5rem; justify-content: center; }
         nav a { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
 
-        /* Hero Section */
         .hero { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); color: white; padding: 6rem 1rem; text-align: center; min-height: 85vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .hero-logo { width: 170px; height: 170px; background: white; border-radius: 35px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(0,0,0,0.3); overflow: hidden; }
         .hero-logo img { width: 90%; height: 90%; object-fit: contain; }
         h1 { font-size: 4rem; letter-spacing: -2px; font-weight: 800; }
 
-        /* Action Buttons */
         .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; }
         .btn-main { background: white; color: #c1121f; padding: 1.2rem 3.5rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.3rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: 0.3s; }
-        .btn-main:hover { transform: translateY(-5px); background: #fdfdfd; }
         .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1px solid white; transition: 0.3s; }
 
-        /* Content Sections */
         .section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
         .section h2 { margin-bottom: 2rem; font-size: 2.5rem; color: #333; font-weight: 800; } 
-        
         #platform-concept { background: #fff; border: 1px solid #eee; border-radius: 40px; padding: 5rem 3rem; margin: 3rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 
-        /* Hybrid Chatbot */
         #jesmi-chat { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
         #chat-trigger { width: 65px; height: 65px; background: #c1121f; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 25px rgba(0,0,0,0.2); border: 2px solid white; font-size: 24px; }
         #chat-window { display: none; position: absolute; bottom: 85px; right: 0; width: 360px; background: white; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; border: 1px solid #eee; }
-        #chat-header { background: #c1121f; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        #chat-header { background: #c1121f; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; }
         #chat-body { height: 300px; padding: 15px; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
         .msg { padding: 10px 14px; border-radius: 15px; max-width: 85%; }
         .bot { background: #eee; align-self: flex-start; }
@@ -45,10 +38,10 @@
         #chat-input-area { padding: 10px; background: white; border-top: 1px solid #eee; display: flex; gap: 5px; }
         #chat-input-area input { flex: 1; border: 1px solid #ddd; padding: 10px 15px; border-radius: 20px; outline: none; }
 
-        /* Minimal Secondary Footer */
         footer { background-color: #0b0b0b; color: #444; padding: 3rem 2rem; text-align: center; border-top: 1px solid #222; }
-        .founder-link { color: #666; font-size: 0.85rem; text-decoration: none; transition: 0.3s; }
-        .founder-link:hover { color: #e63946; }
+        .team-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
+        .secondary-link { color: #666; font-size: 0.85rem; text-decoration: none; transition: 0.3s; }
+        .secondary-link:hover { color: #e63946; }
         .footer-copyright { font-size: 0.7rem; margin-top: 15px; opacity: 0.4; letter-spacing: 2px; }
     </style>
 </head>
@@ -64,15 +57,13 @@
 
     <section id="hero" class="hero">
         <div class="hero-logo">
-            <!-- رابط شعار JESMI المباشر -->
-            <img src="https://i.postimg.cc/RCb0831Y/JESMI.gif" alt="JESMI">
+            <img src="https://i.postimg.cc" alt="JESMI">
         </div>
         <h1>JESMI</h1>
         <p style="font-size: 1.3rem; opacity: 0.9; margin-top: 10px;">One Body. Synchronizing biology and digital harmony.</p>
         <div class="btn-group">
             <a href="https://studio--studio-3908265938-96e20.us-central1.hosted.app" target="_blank" class="btn-main"><i class="fas fa-rocket"></i> Try Now</a>
-            <!-- رابط استبيان Tally المباشر -->
-            <a href="https://tally.so/r/MezBBM" target="_blank" class="btn-sub"><i class="fas fa-gift"></i> Claim 500 Points</a>
+            <a href="https://tally.so" target="_blank" class="btn-sub"><i class="fas fa-gift"></i> Claim 500 Points</a>
         </div>
     </section>
 
@@ -81,7 +72,6 @@
         <p style="font-size: 1.15rem; color: #777; max-width: 750px; margin: 0 auto;">Technology should move like a single living organism—seamless and unified. JESMI bridges the gap between daily habits and biological responses.</p>
     </section>
 
-    <!-- تم تغيير اللون للأسود كما طلبت -->
     <section id="platform-concept" class="section">
         <h2>The Concept</h2>
         <p style="font-size: 1.3rem; color: #555; font-weight: 300;">"Beyond traditional interfaces lies a new dimension of interaction. A space where boundaries dissolve and data flows with your body."</p>
@@ -92,7 +82,7 @@
         <div id="chat-window">
             <div id="chat-header"><span>JESMI Intel</span><i class="fas fa-times" onclick="toggleChat()" style="cursor:pointer"></i></div>
             <div id="chat-body" id="chatMessages">
-                <div class="msg bot">Connection Established. Ask me about the JESMI Bio-logic or Expansion plans.</div>
+                <div class="msg bot">Connection Established. Ask about the JESMI Bio-logic, the Founder, or our Research team.</div>
             </div>
             <div id="chat-input-area">
                 <input type="text" id="userInput" placeholder="Ask anything..." onkeypress="if(event.key === 'Enter') handleInput()">
@@ -102,10 +92,17 @@
     </div>
 
     <footer>
-        <!-- وصلة ثانوية غير جوهرية تحتوي على معلوماتك المبطنة كما طلبت -->
-        <a href="mailto:graphic.abdalla@://gmail.com Inquiry&body=Founder Contact: Egypt +201154190610 / Sudan +249912541954" class="founder-link">
-            Founder: Abdalla A. Mustafa
-        </a>
+        <div class="team-links">
+            <!-- رابط المؤسس -->
+            <a href="mailto:graphic.abdalla@://gmail.com Contact&body=Egypt +201154190610 / Sudan +249912541954" class="secondary-link">
+                Founder: Abdalla A. Mustafa
+            </a>
+            <span style="color:#222">|</span>
+            <!-- رابط صفاء محمد -->
+            <a href="https://www.linkedin.com/in/safaa-i-mohammed-7343b7225" target="_blank" class="secondary-link">
+                R&D: Safaa Mohammed
+            </a>
+        </div>
         <div class="footer-copyright">&copy; 2026 JESMI. ONE BODY. ONE GOAL.</div>
     </footer>
 
@@ -115,10 +112,11 @@
             box.style.display = (box.style.display === 'flex') ? 'none' : 'flex';
         }
         const DATA = {
-            "founder": "Founder Abdalla A. Mustafa is an AI Response Designer and Multimedia specialist. His global vision is the core of JESMI's logic.",
-            "mood": "JESMI is mood-flexible. If you consume extra calories for mood, it calculates an instant 'Recovery Plan' through hydration and activity.",
-            "expansion": "JESMI is expanding to Gyms and Events via Barcodes for seamless bio-data synchronization.",
-            "default": "Ask me about 'Mood', 'Expansion', or 'The Founder'!"
+            "founder": "Founder Abdalla A. Mustafa is an AI Response Designer and Multimedia specialist. He leads the JESMI vision.",
+            "safaa": "Safaa Mohammed leads our R&D department, focusing on biological research and system development to ensure the Digital Harmony of JESMI.",
+            "team": "JESMI is led by Founder Abdalla A. Mustafa and Safaa Mohammed (Research & Development).",
+            "mood": "JESMI calculates instant 'Recovery Plans' through hydration and activity for any caloric deviations.",
+            "default": "Ask about 'The Team', 'Mood', or 'Expansion'!"
         };
         function handleInput() {
             const input = document.getElementById('userInput');
@@ -132,8 +130,9 @@
                 let r = DATA.default;
                 const low = text.toLowerCase();
                 if(low.includes("founder") || low.includes("abdalla")) r = DATA.founder;
-                else if(low.includes("mood") || low.includes("calories")) r = DATA.mood;
-                else if(low.includes("expansion") || low.includes("barcode")) r = DATA.expansion;
+                else if(low.includes("safaa")) r = DATA.safaa;
+                else if(low.includes("team")) r = DATA.team;
+                else if(low.includes("mood")) r = DATA.mood;
                 body.innerHTML += `<div class="msg bot">${r}</div>`;
                 body.scrollTop = body.scrollHeight;
             }, 600);
