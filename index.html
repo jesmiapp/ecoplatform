@@ -3,67 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JESMI - One Body | Bio-Digital Harmony</title>
-    <!-- Icons Library -->
+    <title>JESMI - One Body | Digital Harmony</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
     <style>
         :root { --primary: #c1121f; --secondary: #e63946; --dark: #0b0b0b; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f8f9fa; color: #333; line-height: 1.6; text-align: left; }
-        html { scroll-behavior: smooth; }
+        
+        nav { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; text-decoration: none; font-weight: 600; margin: 0 15px; }
 
-        /* Navigation */
-        nav { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        nav ul { list-style: none; display: flex; gap: 1.5rem; justify-content: center; }
-        nav a { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-
-        /* Hero Section */
         .hero { background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); color: white; padding: 6rem 1rem; text-align: center; min-height: 85vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .hero-logo { width: 170px; height: 170px; background: white; border-radius: 35px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(0,0,0,0.3); overflow: hidden; }
         .hero-logo img { width: 100%; height: 100%; object-fit: contain; }
-        h1 { font-size: 4.5rem; letter-spacing: -2px; font-weight: 900; margin-bottom: 10px; }
-        .hero p { font-size: 1.35rem; opacity: 0.95; max-width: 800px; margin-bottom: 30px; }
-
-        /* Action Buttons */
-        .btn-group { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
-        .btn-main { background: white; color: var(--primary); padding: 1.2rem 3.5rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.3rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: 0.3s; }
-        .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1px solid white; transition: 0.3s; }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
-
-        /* Smart Chatbot Trigger (The GIF Icon) */
-        #jesmi-chat { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
-        #chat-trigger { width: 80px; height: 80px; background: white; border-radius: 24px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 35px rgba(193, 18, 31, 0.5); border: 2px solid var(--primary); overflow: hidden; animation: bio-pulse 2.5s infinite; }
-        #chat-trigger img { width: 85%; height: 85%; object-fit: contain; }
-        @keyframes bio-pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); box-shadow: 0 15px 45px rgba(193, 18, 31, 0.7); } 100% { transform: scale(1); } }
-
-        /* Chat Window */
-        #chat-window { display: none; position: absolute; bottom: 95px; right: 0; width: 360px; max-width: 85vw; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); flex-direction: column; overflow: hidden; border: 1px solid #eee; }
-        #chat-header { background: var(--primary); color: white; padding: 18px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
-        #chat-body { height: 350px; padding: 15px; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 12px; font-size: 14px; }
         
-        /* Message Bubbles */
+        h1 { font-size: clamp(3rem, 10vw, 4.5rem); font-weight: 900; letter-spacing: -2px; }
+        .hero p { font-size: 1.3rem; opacity: 0.95; margin: 15px 0 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
+
+        .btn-group { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+        .btn-main { background: white; color: var(--primary); padding: 1.2rem 3.5rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: 0.3s; }
+        .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; border: 1px solid white; transition: 0.3s; }
+
+        /* Smart Chatbot Trigger (JESMI LOGO GIF) */
+        #jesmi-chat { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
+        #chat-trigger { width: 85px; height: 85px; background: white; border-radius: 25px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 35px rgba(193, 18, 31, 0.5); border: 2.5px solid var(--primary); overflow: hidden; animation: bio-pulse 2.5s infinite; }
+        #chat-trigger img { width: 90%; height: 90%; object-fit: contain; }
+        @keyframes bio-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); box-shadow: 0 15px 45px rgba(193, 18, 31, 0.7); } }
+
+        /* Window & Messages */
+        #chat-window { display: none; position: absolute; bottom: 100px; right: 0; width: 370px; max-width: 85vw; background: white; border-radius: 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); flex-direction: column; overflow: hidden; }
+        #chat-header { background: var(--primary); color: white; padding: 18px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        #chat-body { height: 380px; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; font-size: 14px; background: #fdfdfd; }
+        
         .msg { padding: 12px 16px; border-radius: 18px; max-width: 85%; line-height: 1.5; }
-        .bot { background: #f0f0f0; align-self: flex-start; border-bottom-left-radius: 4px; color: #222; }
-        .user { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+        .bot { background: #f0f0f0; align-self: flex-start; color: #222; border-left: 4px solid var(--primary); text-align: left; }
+        .user { background: var(--primary); color: white; align-self: flex-end; text-align: right; }
 
-        /* Investor Portal Glow Inputs */
-        .investor-input { width: 100%; margin-bottom: 10px; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; transition: 0.4s; }
-        .investor-input:focus { border-color: var(--primary); box-shadow: 0 0 12px rgba(193, 18, 31, 0.4); }
-        .btn-send-invest { width: 100%; background: #000; color: #fff; padding: 12px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; animation: glow-pulse 2s infinite; }
-        @keyframes glow-pulse { 0%, 100% { box-shadow: 0 0 5px rgba(0,0,0,0.2); } 50% { box-shadow: 0 0 15px rgba(193, 18, 31, 0.5); } }
-
-        /* Chips / Templates */
-        #chat-suggestions { padding: 10px; display: flex; gap: 8px; overflow-x: auto; background: #fff; border-top: 1px solid #eee; }
-        .chip { background: #f0f0f0; color: #555; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; cursor: pointer; border: 1px solid #ddd; white-space: nowrap; }
-        .chip:hover { background: var(--primary); color: white; }
-
-        .chat-cta { display: block; background: var(--dark); color: white !important; padding: 10px; border-radius: 12px; text-decoration: none; text-align: center; margin-top: 10px; font-weight: bold; }
+        /* Investor Portal Glow */
+        .investor-field { width: 100%; margin-top: 10px; padding: 12px; border: 1px solid #ddd; border-radius: 10px; outline: none; transition: 0.4s; }
+        .investor-field:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(193,18,31,0.3); }
+        .btn-send { width: 100%; background: #000; color: #fff; padding: 12px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .btn-send:hover { background: var(--primary); }
 
         #chat-input-area { padding: 15px; background: white; border-top: 1px solid #eee; display: flex; gap: 8px; }
-        #chat-input-area input { flex: 1; border: 1px solid #ddd; padding: 12px 18px; border-radius: 25px; outline: none; }
-
-        footer { background: var(--dark); color: #777; padding: 4rem 2rem; text-align: center; }
-        .footer-links a { color: #aaa; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
+        #chat-input-area input { flex: 1; border: 1px solid #ddd; padding: 12px; border-radius: 25px; outline: none; }
+        
+        footer { background: var(--dark); color: #888; padding: 4rem 2rem; text-align: center; }
+        .footer-links a { color: #ccc; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -71,43 +57,40 @@
     <nav>
         <ul>
             <li><a href="#hero">Home</a></li>
-            <li><a href="https://tally.so" target="_blank">Contribute Data</a></li>
-            <li><a href="mailto:graphic.abdalla@gmail.com">Contact Founders</a></li>
+            <li><a href="https://tally.so/r/MezBBM" target="_blank">Contribute Data</a></li>
+            <li><a href="mailto:graphic.abdalla@gmail.com">Contact</a></li>
         </ul>
     </nav>
 
     <section id="hero" class="hero">
         <div class="hero-logo">
-            <img src="https://i.postimg.cc" alt="JESMI Bio-Logic">
+            <!-- Direct GIF Logo -->
+            <img src="https://i.postimg.cc/RCb0831Y/JESMI.gif" alt="JESMI Bio-Logic">
         </div>
         <h1>JESMI</h1>
-        <p>The Bio-Engineering Formula. Analyzing your nutrition and physical activity against hormones, mood, and physical constraints for absolute digital harmony.</p>
+        <p>The Bio-Logic Equation. Seamlessly engineering nutrition and activity against your hormones, mood, and physical constraints for absolute harmony.</p>
         <div class="btn-group">
             <a href="https://studio--studio-3908265938-96e20.us-central1.hosted.app" target="_blank" class="btn-main">Launch Simulation</a>
-            <a href="https://tally.so" target="_blank" class="btn-sub">Claim 500 Points</a>
+            <!-- Direct Survey Link -->
+            <a href="https://tally.so/r/MezBBM" target="_blank" class="btn-sub">Claim 500 Points</a>
         </div>
     </section>
 
-    <!-- Intelligent Chatbot -->
+    <!-- Smart Chatbot Trigger (GIF ICON) -->
     <div id="jesmi-chat">
         <div id="chat-trigger" onclick="toggleChat()">
-            <img src="https://i.postimg.cc" alt="JESMI AI">
+            <img src="https://i.postimg.cc/RCb0831Y/JESMI.gif" alt="JESMI AI">
         </div>
         <div id="chat-window">
-            <div id="chat-header"><span>JESMI Intel AI</span><i class="fas fa-times" onclick="toggleChat()" style="cursor:pointer"></i></div>
+            <div id="chat-header">
+                <span><i class="fas fa-brain"></i> JESMI Intel AI</span>
+                <i class="fas fa-times" onclick="toggleChat()" style="cursor:pointer"></i>
+            </div>
             <div id="chat-body">
-                <div class="msg bot">Welcome to the future of Bio-Engineering. How can I guide your harmony today? / كيف يمكنني مساعدتك؟</div>
+                <div class="msg bot">Welcome to JESMI Intel. How can I guide your harmony today? / كيف يمكنني مساعدتك؟</div>
             </div>
-            
-            <div id="chat-suggestions">
-                <div class="chip" onclick="quickAsk('How it works?')">⚙️ The Formula</div>
-                <div class="chip" onclick="quickAsk('Investment Opportunity')">💰 Investment</div>
-                <div class="chip" onclick="quickAsk('Privacy & The Star')">🛡️ Privacy</div>
-                <div class="chip" onclick="quickAsk('The Founders')">👥 Team</div>
-            </div>
-
             <div id="chat-input-area">
-                <input type="text" id="userInput" placeholder="Ask anything..." onkeypress="if(event.key==='Enter') handleInput()">
+                <input type="text" id="userInput" placeholder="Ask about logic, team, or investment..." onkeypress="if(event.key==='Enter') handleInput()">
                 <button onclick="handleInput()" style="background:none; border:none; color:var(--primary); cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
@@ -115,10 +98,10 @@
 
     <footer>
         <div class="footer-links">
-            <a href="mailto:graphic.abdalla@gmail.com">Founder: Abdalla A. Mustafa</a> | 
-            <a href="https://www.linkedin.com" target="_blank">R&D: Safaa Mohammed</a>
+            <a href="mailto:graphic.abdalla@gmail.com">Abdalla Abbas (Founder & AI Designer)</a> | 
+            <a href="https://www.linkedin.com" target="_blank">Safaa Mohammed (Researcher & Developer)</a>
         </div>
-        <p style="margin-top:20px; font-size:0.7rem; opacity:0.4;">&copy; 2026 JESMI. ONE BODY. ONE GOAL.</p>
+        <p style="margin-top: 20px; font-size: 0.75rem; opacity: 0.5;">&copy; 2026 JESMI. ONE BODY. ONE GOAL.</p>
     </footer>
 
     <script>
@@ -127,66 +110,79 @@
             box.style.display = (box.style.display === 'flex') ? 'none' : 'flex';
         }
 
-        function quickAsk(phrase) {
-            document.getElementById('userInput').value = phrase;
-            handleInput();
-        }
-
-        const JESMI_KNOWLEDGE = {
-            "formula": "JESMI analyzes nutrition and activity against your hormones, mood, and physical constraints (allergies/disabilities) to engineer your day automatically.",
-            "privacy": "The Star feature allows you to 'pull the curtain' to hide social feeds and focus on a private, purely practical execution dashboard.",
-            "team": "Led by Founder Abdalla Mustafa (AI Response Designer) and Safaa Mohammed (R&D Lead), bridging bio-research with technology.",
-            "barcode": "The JESMI Barcode will allow future integration of physical surroundings directly into your bio-plan by scanning products and locations."
+        const KNOWLEDGE_BASE = {
+            "formula": {
+                "tags": ["how", "work", "logic", "formula", "كيف", "شغل", "طريقة", "معادلة", "فكرة"],
+                "intro": "JESMI is a Bio-Logic formula. It scans meals/workouts and processes them against your hormones and physical constraints automatically.",
+                "intro_ar": "جسمي هو معادلة للهندسة الحيوية. يحلل الوجبات والتمارين ويعالجها بناءً على هرموناتك وقيودك الجسدية تلقائياً.",
+                "next": "Would you like to know how we handle **Specific Conditions** (Disabilities/Allergies) or see the **App Simulation**?"
+            },
+            "investor": {
+                "tags": ["invest", "profit", "scale", "pdf", "pitch", "roi", "استثمار", "ربح", "مشروع", "توسع"],
+                "intro": "We are scaling a bio-data valuation model. Revenue and expansion strategies are confidential.",
+                "intro_ar": "نحن نطور نموذجاً لتقييم البيانات الحيوية. استراتيجيات الربح والتوسع سرية.",
+                "next": "Shall I provide the **Pitch Deck (PDF)** form or explain the **Revenue Model**?",
+                "isInvest": true
+            },
+            "team": {
+                "tags": ["team", "founder", "abdalla", "safaa", "فريق", "مؤسس", "عبدالله", "صفاء"],
+                "en": "JESMI is led by Abdalla Abbas (Founder, AI Response & Graphic Designer) and Safaa Mohammed (Researcher & Developer).",
+                "ar": "يقود المشروع عبدالله عباس (المؤسس ومصمم استجابة AI) وصفاء محمد (باحثة ومطورة)."
+            }
         };
 
         function handleInput() {
             const input = document.getElementById('userInput');
             const chatBody = document.getElementById('chat-body');
-            const text = input.value.trim().toLowerCase();
-            const isAr = /[\u0600-\u06FF]/.test(text);
+            const query = input.value.trim().toLowerCase();
+            if(!query) return;
 
-            if(!text) return;
+            const isAr = /[\u0600-\u06FF]/.test(query);
             chatBody.innerHTML += `<div class="msg user" style="text-align: ${isAr ? 'right' : 'left'}">${input.value}</div>`;
             
-            if (text.includes("invest") || text.includes("استثمار") || text.includes("profit") || text.includes("ربح")) {
-                setTimeout(() => {
-                    chatBody.innerHTML += `
-                        <div class="msg bot">
-                            ${isAr ? "للوصول لملفات التوسع، يرجى تزويدنا ببياناتك:" : "To unlock expansion & ROI files, please provide your details:"}
-                            <div style="margin-top:10px;">
-                                <input type="text" id="invName" class="investor-input" placeholder="Full Name">
-                                <input type="text" id="invCompany" class="investor-input" placeholder="Company Name">
-                                <button onclick="sendInvestorEmail()" class="btn-send-invest">Unlock PDF & Notify Founders</button>
-                            </div>
-                        </div>`;
-                    chatBody.scrollTop = chatBody.scrollHeight;
-                }, 600);
-            } else {
-                let reply = isAr ? "أنا أعالج طلبك ضمن خوارزمية JESMI..." : "Processing within JESMI Bio-Logic...";
-                if (text.includes("how") || text.includes("كيف") || text.includes("work")) reply = JESMI_KNOWLEDGE.formula;
-                else if (text.includes("star") || text.includes("ستار") || text.includes("privacy")) reply = JESMI_KNOWLEDGE.privacy;
-                else if (text.includes("team") || text.includes("فريق") || text.includes("founder")) reply = JESMI_KNOWLEDGE.team;
-                else if (text.includes("barcode") || text.includes("باركود")) reply = JESMI_KNOWLEDGE.barcode;
+            let found = false;
+            for (let key in KNOWLEDGE_BASE) {
+                if (KNOWLEDGE_BASE[key].tags.some(t => query.includes(t))) {
+                    const data = KNOWLEDGE_BASE[key];
+                    const intro = isAr ? (data.intro_ar || data.ar) : (data.intro || data.en);
+                    const next = isAr ? (data.next_ar || data.next || "") : (data.next || "");
 
+                    setTimeout(() => {
+                        chatBody.innerHTML += `<div class="msg bot">${intro}</div>`;
+                        if(data.isInvest) {
+                            chatBody.innerHTML += `
+                                <div class="msg bot" style="background:#fff; border:1px solid #eee;">
+                                    <input type="text" id="invN" class="investor-field" placeholder="Full Name">
+                                    <input type="text" id="invC" class="investor-field" placeholder="Company">
+                                    <button onclick="sendInvestorEmail()" class="btn-send">Request PDF & Notify Team</button>
+                                </div>`;
+                        } else if(next) {
+                            setTimeout(() => {
+                                chatBody.innerHTML += `<div class="msg bot" style="background:#fff; border-left:2px solid #000;">${next}</div>`;
+                                chatBody.scrollTop = chatBody.scrollHeight;
+                            }, 1000);
+                        }
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                    }, 600);
+                    found = true; break;
+                }
+            }
+
+            if(!found) {
                 setTimeout(() => {
-                    chatBody.innerHTML += `<div class="msg bot">${reply}</div>`;
+                    chatBody.innerHTML += `<div class="msg bot">${isAr ? "سؤال ذكي. يركز JESMI على موازنة النشاط والغذاء. هل تود استكشاف 'المعادلة' أم 'الفريق'؟" : "Intelligent point. JESMI focuses on balancing activity and nutrition. Explore 'The Formula' or 'The Team'?"}</div>`;
                     chatBody.scrollTop = chatBody.scrollHeight;
                 }, 600);
             }
             input.value = '';
-            chatBody.scrollTop = chatBody.scrollHeight;
         }
 
         function sendInvestorEmail() {
-            const name = document.getElementById('invName').value;
-            const company = document.getElementById('invCompany').value;
-            if(!name || !company) { alert("Please fill your details"); return; }
-
-            const subject = encodeURIComponent(`Investor Inquiry: ${name} (${company})`);
-            const body = encodeURIComponent(`Hi Abdalla & Safaa,\n\nI am ${name} from ${company}. I am interested in the JESMI Bio-Logic formula and ROI files.\n\nPlease share the Pitch Deck.`);
-            
-            // Redirect directly to Email with CC to Safaa
-            window.location.href = `mailto:graphic.abdalla@://gmail.com{subject}&body=${body}`;
+            const n = document.getElementById('invN').value;
+            const c = document.getElementById('invC').value;
+            if(!n || !c) return alert("Please fill Name and Company");
+            // Direct Email to Abdalla and CC Safaa
+            window.location.href = `mailto:graphic.abdalla@://gmail.com Inquiry: ${n}&body=I am ${n} from ${c}. After reviewing the JESMI platform, I request the confidential Investment PDF.`;
         }
 
         window.onload = () => { setTimeout(() => { if(document.getElementById('chat-window').style.display !== 'flex') toggleChat(); }, 5000); };
