@@ -3,125 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JESMI - One Body | Digital Harmony</title>
-    <!-- مكتبة الأيقونات الضرورية -->
+    <title>JESMI - One Body</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
     <style>
-        /* التنسيق العام */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f8f9fa; color: #333; line-height: 1.6; text-align: right; }
-        html { scroll-behavior: smooth; }
-
-        /* الهيدر والتنقل */
-        nav { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        nav ul { list-style: none; display: flex; gap: 1.5rem; justify-content: center; }
-        nav a { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-
-        /* قسم الهيرو (Hero Section) */
-        .hero { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); color: white; padding: 6rem 1rem; text-align: center; min-height: 85vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .hero-logo { width: 170px; height: 170px; background: white; border-radius: 35px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(0,0,0,0.3); overflow: hidden; }
-        .hero-logo img { width: 100%; height: 100%; object-fit: cover; }
         
-        h1 { font-size: 4rem; letter-spacing: -2px; font-weight: 800; margin-bottom: 10px; }
-        .hero p { font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px; max-width: 700px; }
+        nav { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; text-decoration: none; font-weight: 600; margin: 0 10px; }
 
-        /* الأزرار الرئيسية */
-        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-        .btn-main { background: white; color: #c1121f; padding: 1.2rem 3.5rem; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 1.3rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: 0.3s; }
-        .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; border: 1px solid white; transition: 0.3s; }
-        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .hero { background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); color: white; padding: 5rem 1rem; text-align: center; min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .hero-logo { width: 160px; height: 160px; background: white; border-radius: 35px; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 35px rgba(0,0,0,0.3); overflow: hidden; }
+        .hero-logo img { width: 100%; height: 100%; object-fit: contain; }
+        
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; }
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem; }
+        .btn-main { background: white; color: #c1121f; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .btn-sub { background: rgba(255,255,255,0.2); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; border: 1px solid white; }
 
-        /* الأقسام التعريفية */
-        .section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
-        .section h2 { margin-bottom: 2rem; font-size: 2.5rem; color: #333; font-weight: 800; } 
-        #platform-concept { background: #fff; border: 1px solid #eee; border-radius: 40px; padding: 5rem 3rem; margin: 3rem auto; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
-
-        /* واجهة الشات بوت الذكية */
+        /* الشات بوت */
         #jesmi-chat { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
-        #chat-trigger { width: 65px; height: 65px; background: #c1121f; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 25px rgba(193, 18, 31, 0.4); border: 2px solid white; font-size: 24px; animation: pulse-red 2s infinite; }
-        
-        @keyframes pulse-red {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(193, 18, 31, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(193, 18, 31, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(193, 18, 31, 0); }
-        }
+        #chat-trigger { width: 65px; height: 65px; background: #c1121f; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 25px rgba(193, 18, 31, 0.4); border: 2px solid white; font-size: 24px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(0.95); } 70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(193,18,31,0); } 100% { transform: scale(0.95); } }
 
-        #chat-window { display: none; position: absolute; bottom: 85px; right: 0; width: 360px; max-width: 85vw; background: white; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; border: 1px solid #eee; }
-        #chat-header { background: #c1121f; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
-        #chat-body { height: 320px; padding: 15px; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+        #chat-window { display: none; position: absolute; bottom: 85px; right: 0; width: 350px; max-width: 85vw; background: white; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; border: 1px solid #eee; }
+        #chat-header { background: #c1121f; color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; }
+        #chat-body { height: 300px; padding: 15px; overflow-y: auto; background: #fdfdfd; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
         
-        .msg { padding: 10px 14px; border-radius: 15px; max-width: 85%; line-height: 1.4; }
-        .bot { background: #eee; align-self: flex-start; border-bottom-left-radius: 2px; }
-        .user { background: #c1121f; color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
-        
-        .chat-cta { display: block; background: #333; color: white !important; padding: 8px; border-radius: 10px; text-decoration: none; text-align: center; margin-top: 8px; font-size: 0.8rem; font-weight: bold; }
+        #chat-suggestions { padding: 10px; display: flex; gap: 8px; overflow-x: auto; background: #fff; border-top: 1px solid #eee; white-space: nowrap; }
+        .chip { background: #f0f0f0; color: #555; padding: 6px 12px; border-radius: 15px; font-size: 0.75rem; cursor: pointer; border: 1px solid #ddd; }
+        .chip:hover { background: #c1121f; color: white; }
+
+        .msg { padding: 10px 14px; border-radius: 15px; max-width: 85%; }
+        .bot { background: #eee; align-self: flex-start; }
+        .user { background: #c1121f; color: white; align-self: flex-end; }
+        .chat-cta { display: block; background: #333; color: white !important; padding: 8px; border-radius: 10px; text-align: center; margin-top: 8px; text-decoration: none; font-weight: bold; }
 
         #chat-input-area { padding: 10px; background: white; border-top: 1px solid #eee; display: flex; gap: 5px; }
         #chat-input-area input { flex: 1; border: 1px solid #ddd; padding: 10px 15px; border-radius: 20px; outline: none; }
-
-        /* التذييل (Footer) */
-        footer { background-color: #0b0b0b; color: #666; padding: 3rem 2rem; text-align: center; border-top: 1px solid #222; }
-        .team-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
-        .secondary-link { color: #888; font-size: 0.85rem; text-decoration: none; transition: 0.3s; }
-        .secondary-link:hover { color: #e63946; }
+        footer { background: #0b0b0b; color: #666; padding: 2rem; text-align: center; }
     </style>
 </head>
 <body>
 
     <nav>
-        <ul>
-            <li><a href="#hero">الرئيسية</a></li>
-            <li><a href="#about">رؤيتنا</a></li>
-            <li><a href="https://tally.so" target="_blank">المساهمة بالبيانات</a></li>
-        </ul>
+        <a href="#hero">الرئيسية</a>
+        <a href="https://tally.so/r/MezBBM" target="_blank">المساهمة بالبيانات</a>
     </nav>
 
     <section id="hero" class="hero">
         <div class="hero-logo">
-            <!-- رابط صورة الشعار المحدث -->
-            <img src="https://i.postimg.cc" alt="JESMI LOGO">
+            <!-- الرابط المباشر للشعار -->
+            <img src="https://i.postimg.cc/RCb0831Y/JESMI.gif" alt="JESMI">
         </div>
         <h1>JESMI</h1>
-        <p>One Body. هندسة ذكية لإدارة حياتك الصحية والعملية من خلال استشعار الطقس والميزانية والحالة الحيوية.</p>
+        <p>الانسجام الرقمي بين البيئة والجسد.</p>
         <div class="btn-group">
-            <a href="https://studio--studio-3908265938-96e20.us-central1.hosted.app" target="_blank" class="btn-main"><i class="fas fa-rocket"></i> جرب الآن</a>
-            <!-- رابط الاستبيان المحدث -->
-            <a href="https://tally.so" target="_blank" class="btn-sub"><i class="fas fa-gift"></i> احصل على 500 نقطة</a>
+            <a href="https://studio--studio-3908265938-96e20.us-central1.hosted.app" target="_blank" class="btn-main">تجربة التطبيق</a>
+            <!-- الرابط المباشر للاستبيان -->
+            <a href="https://tally.so/r/MezBBM" target="_blank" class="btn-sub">احصل على 500 نقطة</a>
         </div>
     </section>
 
-    <section id="about" class="section">
-        <h2>رؤيتنا</h2>
-        <p style="font-size: 1.15rem; color: #777; max-width: 750px; margin: 0 auto;">يجب أن تتحرك التكنولوجيا ككائن حي واحد. JESMI يسد الفجوة بين عاداتك اليومية واستجابتك البيولوجية دون الحاجة لإدخال بيانات يدوية معقدة.</p>
-    </section>
-
-    <section id="platform-concept" class="section">
-        <h2>مفهوم "الستار" والخصوصية</h2>
-        <p style="font-size: 1.3rem; color: #555; font-weight: 300;">"نحن نمنحك السيطرة. يمكنك استخدام الجانب الاجتماعي للتحفيز، أو 'إنزال الستار' لتتحول الواجهة إلى أداة عملية بحتة تركز على أهدافك الصحية وإدارة يومك وميزانيتك بخصوصية مطلقة."</p>
-    </section>
-
-    <!-- الشات بوت -->
     <div id="jesmi-chat">
         <div id="chat-trigger" onclick="toggleChat()"><i class="fas fa-fingerprint"></i></div>
         <div id="chat-window">
-            <div id="chat-header"><span>JESMI Intel</span><i class="fas fa-times" onclick="toggleChat()" style="cursor:pointer"></i></div>
-            <div id="chat-body" id="chatMessages">
-                <div class="msg bot">نظام JESMI جاهز للاستشعار. هل تود معرفة كيف يحلل طقسك وميزانيتك؟ أم تبحث عن معلومات الاستثمار والربح؟</div>
+            <div id="chat-header"><span>JESMI Intel</span><i class="fas fa-times" onclick="toggleChat()"></i></div>
+            <div id="chat-body">
+                <div class="msg bot">مرحباً بك. كيف يمكنني خدمتك اليوم؟</div>
+            </div>
+            <div id="chat-suggestions">
+                <div class="chip" onclick="quickAsk('كيف يعمل النظام؟')">⚙️ كيف يعمل؟</div>
+                <div class="chip" onclick="quickAsk('فرص الاستثمار والربح')">💰 الاستثمار</div>
+                <div class="chip" onclick="quickAsk('ما هي ميزة الستار؟')">🛡️ الخصوصية</div>
             </div>
             <div id="chat-input-area">
-                <input type="text" id="userInput" placeholder="اسأل عن الاستثمار، الستار، أو الفريق..." onkeypress="if(event.key === 'Enter') handleInput()">
+                <input type="text" id="userInput" placeholder="اكتب سؤالك..." onkeypress="if(event.key==='Enter') handleInput()">
                 <button onclick="handleInput()" style="background:none; border:none; color:#c1121f; cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="team-links">
-            <a href="mailto:graphic.abdalla@gmail.com" class="secondary-link">المؤسس: Abdalla A. Mustafa</a>
-            <span style="color:#222">|</span>
-            <a href="https://www.linkedin.com" target="_blank" class="secondary-link">R&D: Safaa Mohammed</a>
-        </div>
-        <div style="font-size: 0.7rem; margin-top: 15px; opacity: 0.4; letter-spacing: 2px;">&copy; 2026 JESMI. ONE BODY. ONE GOAL.</div>
+        <p>المؤسس: Abdalla A. Mustafa | R&D: Safaa Mohammed</p>
     </footer>
 
     <script>
@@ -130,49 +94,39 @@
             box.style.display = (box.style.display === 'flex') ? 'none' : 'flex';
         }
 
+        function quickAsk(phrase) {
+            document.getElementById('userInput').value = phrase;
+            handleInput();
+        }
+
         function handleInput() {
             const input = document.getElementById('userInput');
             const chatBody = document.getElementById('chat-body');
             const text = input.value.trim().toLowerCase();
-            const appLink = "https://studio--studio-3908265938-96e20.us-central1.hosted.app";
+            const surveyLink = "https://tally.so/r/MezBBM";
 
             if(!text) return;
-
             chatBody.innerHTML += `<div class="msg user">${input.value}</div>`;
             
-            let response = "أنا أعالج نقاط بياناتك الآن. يمكنك السؤال عن 'الاستثمار'، 'ميزة الستار'، أو 'كيفية الربح والتوسع'.";
+            let response = "أنا هنا لمساعدتك في فهم رؤية JESMI.";
             let cta = "";
 
-            if (text.includes("استثمار") || text.includes("ربح") || text.includes("invest")) {
-                response = "نحن نجمع 120 نقطة بيانات حيوية يومياً لبناء أقوى خوارزمية تنبؤية. تفاصيل الربح والتوسع محفوظة في ملفات PDF سرية للمستثمرين.";
-                cta = `<a href="mailto:graphic.abdalla@://gmail.com Inquiry" class="chat-cta">طلب ملف الاستثمار (PDF)</a>`;
-            } else if (text.includes("ستار") || text.includes("خصوصية")) {
-                response = "ميزة الستار تسمح لك بإخفاء الجانب الاجتماعي والتركيز على إدارة حياتك العملية بخصوصية تامة، وهي حالياً في مرحلة القياس التقني.";
-            } else if (text.includes("كيف") || text.includes("شغل")) {
-                response = "JESMI يستشعر طقسك، ميزانيتك، ونبضك ليصيغ لك يومك تلقائياً دون أي إدخال بيانات يدوي.";
-                cta = `<a href="${appLink}" target="_blank" class="chat-cta">جرب محاكاة النظام</a>`;
+            if (text.includes("كيف")) {
+                response = "نظام يستشعر طقسك وميزانيتك ليصيغ يومك تلقائياً.";
+            } else if (text.includes("استثمار")) {
+                response = "نحن نجمع بيانات استهلاكية فريدة للتوسع العالمي. تفاصيل الربح في ملفاتنا السرية.";
+                cta = `<a href="mailto:graphic.abdalla@gmail.com" class="chat-cta">طلب ملف الاستثمار PDF</a>`;
+            } else if (text.includes("ستار")) {
+                response = "ميزة الستار تخفي الجانب الاجتماعي لتمنحك واجهة عملية بخصوصية تامة.";
+                cta = `<a href="${surveyLink}" target="_blank" class="chat-cta">ابدأ بجمع النقاط الآن</a>`;
             }
 
             setTimeout(() => {
                 chatBody.innerHTML += `<div class="msg bot">${response} ${cta}</div>`;
                 chatBody.scrollTop = chatBody.scrollHeight;
-            }, 600);
-
+            }, 500);
             input.value = '';
-            chatBody.scrollTop = chatBody.scrollHeight;
         }
-
-        // ترحيب استراتيجي للمستثمر عند فتح الصفحة
-        window.onload = () => {
-            setTimeout(() => {
-                if(document.getElementById('chat-window').style.display !== 'flex') {
-                    toggleChat();
-                    const chatBody = document.getElementById('chat-body');
-                    chatBody.innerHTML += `<div class="msg bot" style="font-style: italic;">"JESMI يحلل أنماط السلوك البشري لبناء قيمة استثمارية فريدة. هل تود رؤية مستقبل البيانات الحيوية؟"</div>`;
-                }
-            }, 4000);
-        };
     </script>
 </body>
 </html>
-
